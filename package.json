@@ -1,5 +1,5 @@
 {
-  "name": "react-ecommerce",
+  "name": "react-project-set-up-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "App.js",
@@ -11,7 +11,7 @@
     "lint-fix": "eslint \"src/**/*.{js,jsx}\" --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "renjithabby",
   "license": "ISC",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
