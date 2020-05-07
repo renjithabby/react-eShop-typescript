@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "imageUrl": "",
+      "name": "Product 1",
+      "price": "£2.00",
+      "isFavourite": false,
+      "inBasket": false
+    },
+    {
+      "id": "2",
+      "imageUrl": "",
+      "name": "Product 2",
+      "price": "£2.00",
+      "isFavourite": false,
+      "inBasket": false
+    },
+    {
+      "id": "3",
+      "imageUrl": "",
+      "name": "Product 3",
+      "price": "£2.00",
+      "isFavourite": false,
+      "inBasket": false
+    },
+    {
+      "id": "4",
+      "imageUrl": "",
+      "name": "Product 4",
+      "price": "£2.00",
+      "isFavourite": false,
+      "inBasket": false
+    },
+    {
+      "id": "5",
+      "imageUrl": "",
+      "name": "Product 5",
+      "price": "£2.00",
+      "isFavourite": false,
+      "inBasket": false
+    },
+    {
+      "id": "6",
+      "imageUrl": "",
+      "name": "Product 6",
+      "price": "£2.00",
+      "isFavourite": false,
+      "inBasket": false
+    },
+    {
+      "id": "7",
+      "imageUrl": "",
+      "name": "Product 7",
+      "price": "£2.00",
+      "isFavourite": false,
+      "inBasket": false
+    }
+  ]
+}

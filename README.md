@@ -1,15 +1,11 @@
 # react-project-set-up-boilerplate
 
-This is a base setup to start developing a react project with parcel. This project is open source, so please feel free to fork and adapt for your own projects. Happy Coding!
+State management example using context and hooks.
 
-**Whats Included**
+Simple E-Shop with home, favourites and basket page. Functionality to add items to favourites and basket.
+Application State implemented using context and hooks, new way of maanging state without using redux for simple applications.
 
-1. prettier
-2. eslint
-3. parcel
-4. react and jsx
-
-You dont need .babelrc file as Parcel transpiles your code with @babel/preset-env by default. Also, does not require @babel/preset-react as parcel supports .jsx automatically.
+Also used emotions to handle styling.
 
 For Development build,
 
