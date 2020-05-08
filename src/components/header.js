@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from "react";
 import { Link } from "@reach/router";
 import { css, jsx } from "@emotion/core";
 
@@ -61,7 +60,7 @@ const navLinkStyle = css`
 const Header = () => {
   return (
     <header css={headerStyle}>
-      <h1>E-shop</h1>
+      <h1>E-Shop</h1>
       <nav css={navStyle}>
         <NavLink to="/" css={navLinkStyle}>
           Home

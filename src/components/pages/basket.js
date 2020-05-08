@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import React, { useContext } from "react";
-import PropTypes from "prop-types";
+import { useContext } from "react";
 import ProductList from "../productList";
 import { ApplicationContext } from "../../contexts/applicationContext";
 import { css, jsx } from "@emotion/core";
