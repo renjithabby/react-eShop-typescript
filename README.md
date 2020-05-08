@@ -1,8 +1,15 @@
-# react-project-set-up-boilerplate
+<h1 align="center">
+  eShop
+</h1>
+<p align="center">
+  <a href="https://ren-eshop.netlify.app/">
+    https://ren-eshop.netlify.app/
+  </a>
+</p>
 
-State management example using context and hooks.
+# State management example using context and hooks.
 
-Simple E-Shop with home, favourites and basket page. Functionality to add items to favourites and basket.
+Simple eShop with home, favourites and basket page. Functionality to add items to favourites and basket.
 Application State implemented using context and hooks, new way of maanging state without using redux for simple applications.
 
 Also used emotions to handle styling.

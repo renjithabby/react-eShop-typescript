@@ -60,7 +60,7 @@ const navLinkStyle = css`
 const Header = () => {
   return (
     <header css={headerStyle}>
-      <h1>E-Shop</h1>
+      <h1>eShop</h1>
       <nav css={navStyle}>
         <NavLink to="/" css={navLinkStyle}>
           Home
