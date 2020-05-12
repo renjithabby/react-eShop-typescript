@@ -1,32 +1,29 @@
 /** @jsx jsx */
 import { useContext } from "react";
 import ProductList from "../productList";
-import { ApplicationContext } from "../../contexts/applicationContext";
+import { RouteComponentProps } from "@reach/router";
+import {
+  ApplicationContext,
+  IContext,
+} from "../../contexts/applicationContext";
 import { css, jsx } from "@emotion/core";
 import { pageGridStyle } from "../helpers/cssHelpers";
 
 const wrapperStyle = css`
   ${pageGridStyle}
 `;
-const getFavouriteProducts = () => {
+const Home: React.FunctionComponent<RouteComponentProps> = () => {
   const {
     state: { products },
-  } = useContext(ApplicationContext);
-  return products.filter(({ isFavourite }) => isFavourite);
-};
+  } = useContext(ApplicationContext) as IContext;
 
-const Favourites = () => {
-  const products = getFavouriteProducts();
   return (
     <div>
       <div css={wrapperStyle}>
         <ProductList products={products} showAdd={true}></ProductList>
-        {products.length === 0 && (
-          <p>No items in the favourite list, start adding items </p>
-        )}
       </div>
     </div>
   );
 };
 
-export default Favourites;
+export default Home;

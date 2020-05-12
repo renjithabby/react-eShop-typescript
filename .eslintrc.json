@@ -1,14 +1,20 @@
 {
+  "parser": "@typescript-eslint/parser",
   "extends": [
-    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:import/errors",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
+    "prettier/@typescript-eslint",
     "prettier",
     "prettier/react"
   ],
   "rules": {
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "@typescript-eslint/interface-name-prefix": [
+      "error",
+      { "prefixWithI": "always" }
+    ]
   },
   "plugins": ["react", "import", "jsx-a11y"],
   "parserOptions": {
@@ -26,6 +32,11 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   }
 }

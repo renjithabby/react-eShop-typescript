@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { useContext } from "react";
-import PropTypes from "prop-types";
 import FavouriteBtn from "./favouriteBtn";
 import Button from "./button";
-import { ApplicationContext } from "../contexts/applicationContext";
+import { ApplicationContext, IContext } from "../contexts/applicationContext";
 import { css, jsx } from "@emotion/core";
 
 const itemStyle = css`
@@ -24,7 +23,19 @@ const actionWrapperStyle = css`
   justify-content: space-between;
 `;
 
-const ProuctItem = ({
+export type ProductItemType = {
+  id: string;
+  key: string;
+  imageUrl?: string;
+  name: string;
+  price: string;
+  isFavourite: boolean;
+  inBasket: boolean;
+  showAdd: boolean;
+  showRemove: boolean;
+};
+
+const ProuctItem: React.FunctionComponent<ProductItemType> = ({
   id,
   imageUrl,
   name,
@@ -36,7 +47,7 @@ const ProuctItem = ({
 }) => {
   const { toggleFavourite, addToBasket, removeFromBasket } = useContext(
     ApplicationContext
-  );
+  ) as IContext;
   return (
     <div css={itemStyle}>
       <img src={imageUrl} alt="product" />
@@ -45,13 +56,13 @@ const ProuctItem = ({
       <div css={actionWrapperStyle}>
         <FavouriteBtn
           isFavourite={isFavourite}
-          handleBtnClick={() => toggleFavourite(id)}
+          handleBtnClick={(): void => toggleFavourite(id)}
         />
         {showAdd && (
           <Button
             disabled={inBasket}
             btnText="Add"
-            handleBtnClick={() => addToBasket(id)}
+            handleBtnClick={(): void => addToBasket(id)}
           />
         )}
 
@@ -59,7 +70,7 @@ const ProuctItem = ({
           <Button
             disabled={!inBasket}
             btnText="Remove"
-            handleBtnClick={() => removeFromBasket(id)}
+            handleBtnClick={(): void => removeFromBasket(id)}
           />
         )}
       </div>
@@ -68,17 +79,6 @@ const ProuctItem = ({
 };
 
 export default ProuctItem;
-
-ProuctItem.propTypes = {
-  id: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  isFavourite: PropTypes.bool,
-  inBasket: PropTypes.bool,
-  showAdd: PropTypes.bool,
-  showRemove: PropTypes.bool,
-};
 
 ProuctItem.defaultProps = {
   imageUrl:

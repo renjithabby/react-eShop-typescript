@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import PropTypes from "prop-types";
 import { css, jsx } from "@emotion/core";
 
 const buttonStyle = css`
@@ -16,29 +15,29 @@ const buttonStyle = css`
   }
 `;
 
-const Button = ({ handleBtnClick, disabled, btnText }) => {
+type Props = {
+  handleBtnClick: () => void;
+  disabled?: boolean;
+  btnText?: string;
+};
+
+const Button: React.FunctionComponent<Props> = ({
+  handleBtnClick,
+  disabled = false,
+  btnText = "",
+}) => {
   return (
     <button
       css={buttonStyle}
       disabled={disabled}
-      onClick={() => {
+      onClick={(): void => {
         handleBtnClick();
       }}
     >
       {btnText}
     </button>
+  
   );
 };
 
 export default Button;
-
-Button.propTypes = {
-  handleBtnClick: PropTypes.func.isRequired,
-  disabled: PropTypes.bool,
-  btnText: PropTypes.string,
-};
-
-Button.defaultProps = {
-  btnText: "",
-  disabled: false,
-};

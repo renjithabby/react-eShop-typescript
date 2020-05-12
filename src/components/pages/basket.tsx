@@ -1,7 +1,12 @@
 /** @jsx jsx */
 import { useContext } from "react";
 import ProductList from "../productList";
-import { ApplicationContext } from "../../contexts/applicationContext";
+import { ProductItemType } from "../productItem";
+import { RouteComponentProps } from "@reach/router";
+import {
+  ApplicationContext,
+  IContext,
+} from "../../contexts/applicationContext";
 import { css, jsx } from "@emotion/core";
 import { pageGridStyle } from "../helpers/cssHelpers";
 
@@ -9,14 +14,14 @@ const wrapperStyle = css`
   ${pageGridStyle}
 `;
 
-const getBasketProducts = () => {
+const getBasketProducts = (): Array<ProductItemType> => {
   const {
     state: { products },
-  } = useContext(ApplicationContext);
+  } = useContext(ApplicationContext) as IContext;
   return products.filter(({ inBasket }) => inBasket);
 };
 
-const Basket = () => {
+const Basket: React.FunctionComponent<RouteComponentProps> = () => {
   const products = getBasketProducts();
   return (
     <div>

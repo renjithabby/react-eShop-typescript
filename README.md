@@ -1,18 +1,10 @@
 <h1 align="center">
-  eShop
+  eShop TypeScript version
 </h1>
-<p align="center">
-  <a href="https://ren-eshop.netlify.app/">
-    https://ren-eshop.netlify.app/
-  </a>
-</p>
 
-# State management example using context and hooks.
+# State management example using context and hooks.(TypeScript version)
 
-Simple eShop with home, favourites and basket page. Functionality to add items to favourites and basket.
-Application State implemented using context and hooks, new way of maanging state without using redux for simple applications.
-
-Also used emotions to handle styling.
+Migrated the https://github.com/renjithabby/react-eShop project to TypeScript.
 
 For Development build,
 

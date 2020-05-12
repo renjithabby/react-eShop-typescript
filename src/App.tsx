@@ -11,7 +11,8 @@ import Header from "./components/header";
 import {
   ApplicationProvider,
   ApplicationContext,
-} from "./contexts/applicationContext";
+  IContext,
+} from "../src/contexts/applicationContext";
 import productData from "./data/products.json";
 import { Global, css, jsx } from "@emotion/core";
 import normalize from "normalize.css";
@@ -55,13 +56,17 @@ const globalStyle = css`
   }
 `;
 
-const App = () => {
-  const { addProducts } = useContext(ApplicationContext);
-  const fetchProducts = () => {
+// type ResponseType object as any;
+
+const App: React.FunctionComponent<{}> = () => {
+  const { addProducts } = useContext(ApplicationContext) as IContext;
+  const fetchProducts = (): Promise<{}> => {
     return Promise.resolve(productData);
   };
   useEffect(() => {
-    fetchProducts().then((res) => addProducts(res.products));
+    fetchProducts().then((res: any) => {
+      return addProducts(res.products);
+    });
   }, []);
   return (
     <React.Fragment>

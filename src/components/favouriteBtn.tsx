@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import PropTypes from "prop-types";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { css, jsx } from "@emotion/core";
 
@@ -15,9 +14,17 @@ const buttonStyle = css`
   border: none;
 `;
 
-const FavouriteBtn = ({ isFavourite, handleBtnClick }) => {
+type Props = {
+  handleBtnClick: () => void;
+  isFavourite?: boolean;
+};
+
+const FavouriteBtn: React.FunctionComponent<Props> = ({
+  isFavourite = false,
+  handleBtnClick,
+}) => {
   return (
-    <button css={buttonStyle} onClick={() => handleBtnClick()}>
+    <button css={buttonStyle} onClick={(): void => handleBtnClick()}>
       {isFavourite ? (
         <FaHeart css={iconBaseStyle} />
       ) : (
@@ -28,12 +35,3 @@ const FavouriteBtn = ({ isFavourite, handleBtnClick }) => {
 };
 
 export default FavouriteBtn;
-
-FavouriteBtn.propTypes = {
-  isFilled: PropTypes.bool,
-  handleBtnClick: PropTypes.func.isRequired,
-};
-
-FavouriteBtn.defaultProps = {
-  isFilled: false,
-};

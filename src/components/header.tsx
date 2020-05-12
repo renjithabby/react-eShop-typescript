@@ -2,10 +2,17 @@
 import { Link } from "@reach/router";
 import { css, jsx } from "@emotion/core";
 
-const NavLink = (props) => (
+type NavProps = React.ComponentProps<typeof Link>;
+type Style = {
+  style: {
+    color: string;
+  };
+};
+
+const NavLink: React.FunctionComponent<NavProps> = (props) => (
   <Link
     {...props}
-    getProps={({ isCurrent }) => {
+    getProps={({ isCurrent }): Style => {
       // the object returned here is passed to the
       // anchor element's props
       return {
@@ -57,7 +64,8 @@ const navLinkStyle = css`
   margin-left: 2rem;
 `;
 
-const Header = () => {
+type Props = {};
+const Header: React.FunctionComponent<Props> = () => {
   return (
     <header css={headerStyle}>
       <h1>eShop</h1>
